@@ -24,11 +24,12 @@ class Toast extends Component {
             text: config.text,
             color: config.color,
             icon: config.icon,
-            timing: config.timing
+            timing: config.timing,
+            marginBottom: config.marginBottom
         })
 
         Animated.spring(this.state.toast, {
-            toValue: height - 130,
+            toValue: height - config.marginBottom,
             bounciness: 15,
             useNativeDriver: true
         }).start()
